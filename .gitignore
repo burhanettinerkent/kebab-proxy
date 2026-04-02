@@ -5,6 +5,8 @@ cli-proxy-api
 # Configuration
 config.yaml
 .env
+.env.local
+.env.*.local
 
 # Generated content
 bin/*
@@ -18,12 +20,13 @@ pgstore/*
 gitstore/*
 objectstore/*
 
-# Static assets
-static/*
+# Static assets generated locally (keep management.html public-safe and tracked)
+# static/*
 
 # Authentication data
 auths/*
 !auths/.gitkeep
+.cli-proxy-api/*
 
 # Documentation
 docs/*
