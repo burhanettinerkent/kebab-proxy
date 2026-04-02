@@ -1,8 +1,24 @@
 # Kebab Proxy
 
+[![Go](https://img.shields.io/badge/Go-1.24%2B-00ADD8?logo=go&logoColor=white)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Self-Hosted](https://img.shields.io/badge/Deployment-Self--Hosted-2ea44f)](#)
+[![Privacy First](https://img.shields.io/badge/Privacy-First-black)](#)
+[![Management UI](https://img.shields.io/badge/UI-Built--In-blueviolet)](#)
+
 **Kebab Proxy** is a self-hosted, privacy-first AI gateway that exposes a unified local API for multiple AI providers and coding assistants.
 
 It is built for developers, operators, and SaaS builders who want to run tools like **Claude Code**, **Codex/OpenAI-compatible clients**, **Gemini-based flows**, and other supported providers behind **one stable endpoint**, with **local control over credentials, routing, usage, and operational policy**.
+
+---
+
+## Screenshots
+
+> Replace these with Kebab-specific screenshots over time.
+
+![Management UI Preview](./assets/aicodemirror.png)
+
+---
 
 ## Why Kebab Proxy?
 
@@ -38,6 +54,42 @@ Keep secrets, OAuth files, and machine-specific credentials local.
 
 ### 4. Product Readiness
 Use the proxy not only as a personal tool, but as a reusable backend layer for larger systems such as appointment assistants, internal tooling, and Kebab SaaS products.
+
+---
+
+## Architecture Overview
+
+```text
++---------------------------+
+| Clients / Local Tools     |
+|---------------------------|
+| Claude Code               |
+| Codex-compatible clients  |
+| Gemini-based flows        |
+| Custom apps / SaaS        |
++-------------+-------------+
+              |
+              v
++---------------------------+
+|       Kebab Proxy         |
+|---------------------------|
+| Unified API surface       |
+| Routing & model mapping   |
+| Auth / token handling     |
+| Management dashboard      |
+| Usage / operational layer |
++-------------+-------------+
+              |
+              v
++---------------------------+
+| Upstream AI Providers     |
+|---------------------------|
+| Claude / Anthropic        |
+| OpenAI / Codex            |
+| Gemini / Google           |
+| Other supported backends  |
++---------------------------+
+```
 
 ---
 
@@ -102,32 +154,6 @@ It is about making AI infrastructure:
 
 ---
 
-## Security & Privacy
-
-Kebab Proxy is intended to be used as a **self-hosted local/control-plane component**.
-
-This public repository is sanitized and does **not** include private operational data.
-
-### Not included in this public repo
-
-- personal `config.yaml`
-- real `auths/` contents
-- OAuth account exports
-- machine-specific secrets
-- local binaries
-- private credentials or tokens
-
-### Recommended usage
-
-- keep `config.yaml` private
-- keep `auths/` private
-- do not commit live credentials
-- treat public GitHub as code-only, not secret storage
-
-If you want to deploy the project, use the example configuration as a starting point and provide your own local values.
-
----
-
 ## Quick Start
 
 ### 1. Clone the repository
@@ -165,6 +191,32 @@ After startup, open:
 
 ---
 
+## Security & Privacy
+
+Kebab Proxy is intended to be used as a **self-hosted local/control-plane component**.
+
+This public repository is sanitized and does **not** include private operational data.
+
+### Not included in this public repo
+
+- personal `config.yaml`
+- real `auths/` contents
+- OAuth account exports
+- machine-specific secrets
+- local binaries
+- private credentials or tokens
+
+### Recommended usage
+
+- keep `config.yaml` private
+- keep `auths/` private
+- do not commit live credentials
+- treat public GitHub as code-only, not secret storage
+
+If you want to deploy the project, use the example configuration as a starting point and provide your own local values.
+
+---
+
 ## Where Kebab Proxy Fits in the Stack
 
 You can think of the system like this:
@@ -193,6 +245,14 @@ That means:
 - private deployment details stay private
 
 If you fork or reuse it, keep the same discipline: **ship code publicly, keep secrets local.**
+
+---
+
+## Turkish README
+
+For Turkish documentation, see:
+
+- [README_TR.md](./README_TR.md)
 
 ---
 
